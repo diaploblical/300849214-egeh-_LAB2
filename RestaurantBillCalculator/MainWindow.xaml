@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RestaurantBillCalculator"
         mc:Ignorable="d"
-        Title="Bill Calculator" Height="500" Width="800">
+        Title="Bill Calculator" Height="550" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -39,17 +39,21 @@
         <ComboBox x:Name="appetizerBox"  HorizontalAlignment="Left" Margin="143,29,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.684,0.324">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"/>
+                    <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="157" VerticalAlignment="Top" Width="264" Source="images/alfredo.jpg"/>
-        <DataGrid x:Name ="foodSelectionGrid" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="313" Grid.Row="1" VerticalAlignment="Top" Width="528" >
+        <DataGrid x:Name ="foodSelectionGrid" ItemsSource="{Binding}" 
+                  HorizontalAlignment="Left" Height="318" Grid.Row="1" 
+                  VerticalAlignment="Top" Width="528" GridLinesVisibility="Vertical" 
+                  HeadersVisibility="All" RowBackground="White" AlternatingRowBackground="LightBlue">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="100" Header="Item" Binding="{Binding Name}"/>
+                <DataGridTextColumn Width="100" Header="Item" Binding="{Binding Name}" />
                 <DataGridTextColumn Width="100" Header="Category" Binding="{Binding Name}"/>
                 <DataGridTextColumn Width="100" Header="Price" Binding="{Binding Name}"/>
             </DataGrid.Columns>
+            <StatusBar HorizontalAlignment="Left" Height="29" Margin="0,318,0,0" Grid.Row="1" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="2"/>
         </DataGrid>
     </Grid>
 </Window>
